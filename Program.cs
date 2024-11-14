@@ -12,18 +12,63 @@ namespace Gazi.sube2.HelloWorldApp
         static void Main(string[] args)
 
         {
-            System.Console.ForegroundColor = ConsoleColor.Magenta; Console.WriteLine("BM");
-            Console.ForegroundColor = ConsoleColor.Magenta; Console.WriteLine("2406Z");
-            Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.Blue; Console.WriteLine("gs tbmo");
+            //System.Console.ForegroundColor = ConsoleColor.Magenta; Console.WriteLine("BM");
+            //Console.ForegroundColor = ConsoleColor.Magenta; Console.WriteLine("2406Z");
+            //Console.ForegroundColor = ConsoleColor.Blue; Console.WriteLine("gs tbmo");
+
+
+            #region "Değer atama"
+            //byte a = 3;
+            //double d = 2400;
+            //const byte f = 3;
+
+            //Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine(a + d + f);
+
+            #endregion
 
 
 
-            byte a = 3;
-            double d = 2400;
-            const byte f = 3;
 
+            #region "String tanımlama"
+            //string isim = "Osman";
+            //string soyad = "Uygun";
+
+            //Console.Write(isim);
+            //Console.WriteLine();
+            //Console.WriteLine(soyad);
+
+            //Console.WriteLine("Hoşgeldin, " + isim + " " + soyad);
+            //Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("Hoşgeldin, {0} {1}", soyad, isim);
+            //Console.WriteLine($"Hoşgeldin, {isim} {soyad}");
+            //Dolar işareti değerlik girer dolarsız sadece isim ve soyad yazar
+            #endregion
+
+
+
+
+
+
+            #region "Kullanıcı Etkileşimleri"
+            Console.WriteLine("İsminizi Giriniz:");
+            string name = Console.ReadLine();
             
-            Console.ForegroundColor =ConsoleColor.Red; Console.WriteLine(a+d+f);
+            Console.WriteLine("Soyadınızı Giriniz");
+            string soyad = Console.ReadLine();
+            
+            Console.WriteLine("yaşınızı giriniz");
+            string yas = Console.ReadLine();
+            
+            Console.WriteLine($"Hoşgeldiniz,\nİsminiz {name}\nSoyadınız:{soyad}\nYaşınız:{yas}");
+
+            #endregion
+
+
+
+
+
+
+
+
 
             Console.ReadKey();
 
@@ -38,7 +83,7 @@ namespace Gazi.sube2.HelloWorldApp
 
 /*
 
-/////////////////////////////////////////////////////////////        30.09.2024 
+/////////////////////////////////////////////////////////////    30.09.2024     //////////////////////////////////////////////////////
 namespace:İçinde classları bulunduran yapılardır.
 Scope(Blok Yapıları): {} parantezleri arasındaki alanlardır.
 Class: İçinde metodları bulunduran yapılardır. (Bu tanım şimdilik yüzeysel olarak yapılmıştır. Daha sonra detaylandıralacaktır.)
@@ -67,7 +112,9 @@ IntellienceCode: Yapay zeka destekli kod yazım yardımıcısı. Gelen öneriler
 
 Solution-->Project(s)
 View-->Solution Explorer
-/////////////////////////////////////////////////////////               07.10.2024
+/////////////////////////////////////////////////////////        07.10.2024         //////////////////////////////////////////////////
+
+              **KISAYOLLAR** 
 
 CTRL+K+D Kodları düzenlemek için kullanılır
 CTRL+K+C Yazılan Kodu açıklamaya (çift slash yapar)
@@ -75,7 +122,8 @@ CTRL+K+U Açıklamayı geri çevirir
 CTRL+S Kayıt 
 CTRL+B Derleme kısa yolu
 
-.NET Nedir?
+**.NET Nedir?
+
 Microsoft tarafından geliştirilen bir yazılım geliştirme platformudur
 Açık kaynaklıdır
 Birden fazla programlama dili baırndırır
@@ -93,7 +141,7 @@ C# -> Derleme -> MS-IL -> .NET RUNTIME (Derleme) -> 0-1 (Binary)
 
 Microsoft Intermediate Language
 //////////////////////////////////////
-//////////////////////////////////////                           14.10.2024
+//////////////////////////////////////            14.10.2024           ///////////////////////////////////////////////
 
 Derlenen kodun dosyası exe uzantılı olur
 ////////////////////////////////////////
@@ -121,7 +169,7 @@ b = 40; A = 30;
 ////////////////////////////////////////////
 ////////////////////////////////////////////
 
-Static değişkenler program çalıştığı sürece hafızada kalırlar
+*Static değişkenler program çalıştığı sürece hafızada kalırlar
 
 static byte a;
 a = 30;
@@ -206,7 +254,7 @@ variable sayının boyutuna bakarak gerekli değer verilir
 Implicit (veri tipi belirlenmeden yapılan tanımlamalar) yani var ile yazılanlar
 //////////////////////////////////////////////////
 
-explicit (veri tipinin açık olarak bleirtiliği tanımlamalar) başında var olmayıp belirtirsek byte float decimal vs.
+explicit (veri tipinin açık olarak belirtiliği tanımlamalar) başında var olmayıp belirtirsek byte float decimal vs.
 ////////////////////////////////////////////////////////////////
 
 bool: doğru veya yanlış değerlerini saklamak için kullanılır
@@ -227,6 +275,75 @@ metinsel ifadeleri veriler olarak tutabilir
 
 string isim = "Ahmet";
 string soyad = "Mehmet";
+
+
+//////////////////////////////////////////                  21.10.2024                      //////////////////////////////////////////////
+
+string referans tipi (heap bölgesi)
+
+Heap bölgesi stack bölgesine göre daha büyüktür dolayısıyla tek seferde 1 den fazla veri depolayabilir
+Örneğin:
+Ahmet stringinde 5 tane char vardır
+
+Referans tipi dğeişkenlede, referanslar stack bölgesinde, değerler heap bölgesimde tutulur. Değere ulaşmak için, o değerin heap bölgesindeki adrsini bilen referansına ulaşmak gerekir
+
+
+Metod Parametresi:Metodların işlerini yapabilmek için ihtiyaç duydukları verilerdir. Bir metod hiç parametre istemeyebilir yada birden fazla veri tipinde parametre de kabul edebilir. 
+
+
+Void: Bu geri dönüş tipine sahip metodlar işlerini yaptıktan sonra geriye bilgi dönmezler.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
