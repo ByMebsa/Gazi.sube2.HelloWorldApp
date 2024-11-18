@@ -1,6 +1,5 @@
 ﻿using System;
-
-
+using System.Linq.Expressions;
 
 namespace Gazi.sube2.HelloWorldApp
 
@@ -28,7 +27,6 @@ namespace Gazi.sube2.HelloWorldApp
 
 
 
-
             #region "String tanımlama"
             //string isim = "Osman";
             //string soyad = "Uygun";
@@ -43,34 +41,90 @@ namespace Gazi.sube2.HelloWorldApp
             //Dolar işareti değerlik girer dolarsız sadece isim ve soyad yazar
             #endregion
 
+            try
+            {
+                #region "Kullanıcı Etkileşimleri"
+                Console.ForegroundColor = ConsoleColor.Blue; Console.WriteLine("İsminizi Giriniz:");
+                string name = Console.ReadLine();
 
+                Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Soyadınızı Giriniz");
+                string soyad = Console.ReadLine();
 
+                Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine("Yaşınızı giriniz");
+                byte yas = byte.Parse(Console.ReadLine());
 
+                Console.WriteLine($"Hoşgeldiniz,\nİsminiz {name}\nSoyadınız:{soyad}\nYaşınız:{yas}");
+        }
+            catch (FormatException)
+            {
+                Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("YAŞINI SAYIYLA GİRİNİZ.");
 
-
-            #region "Kullanıcı Etkileşimleri"
-            Console.WriteLine("İsminizi Giriniz:");
-            string name = Console.ReadLine();
+            }
             
-            Console.WriteLine("Soyadınızı Giriniz");
-            string soyad = Console.ReadLine();
-            
-            Console.WriteLine("yaşınızı giriniz");
-            string yas = Console.ReadLine();
-            
-            Console.WriteLine($"Hoşgeldiniz,\nİsminiz {name}\nSoyadınız:{soyad}\nYaşınız:{yas}");
+            //catch(OverflowException)
+            //{
+            //    Console.ForegroundColor = ConsoleColor.DarkBlue; Console.WriteLine("0-255 arası değer giriniz"); 
+            //}
+            catch(Exception ex)
+            {
+                Console.WriteLine("Bir hata oluştu.");
 
-            #endregion
-
-
-
+                Console.WriteLine($"Tarih:{DateTime.Now}\nMessage:{ex.Message}\nStack Trace:{ex.StackTrace}");//Kendimiz için tuttuğumuz loglar veritabanı txt vb
+            }
 
 
 
 
 
 
-            Console.ReadKey();
+
+    #endregion
+
+
+
+
+    #region "Tür Dönüşümleri"
+
+    //byte sayi = 20;
+    //int number = sayi;//Implicit Type Casting 
+
+    //checked
+    //{
+    //    int sayi = 256;
+    //    byte number = (byte)sayi;//Explicit type Casting
+    //    Console.WriteLine(number);
+    //}
+
+    //string value = "20";
+    //string value2 = "30";
+    //byte sayi = Convert.ToByte(value);
+    //byte sayi2 = Byte.Parse(value2);                           //Pars metodu stringlere dönüştürmek için
+    //Console.WriteLine(sayi + sayi2);
+    //Console.WriteLine(value + value2);
+
+
+    //int sayi = 20;                                                 //STACK
+    //object value = sayi;                                           //STACK ---> HEAP Boxing yapar ve HEAP bölgesinde saklar
+    //int number = (int)value;
+
+
+
+
+
+
+
+
+    #endregion
+
+
+
+
+
+
+
+
+
+    Console.ReadKey();
 
 
 
@@ -292,6 +346,47 @@ Metod Parametresi:Metodların işlerini yapabilmek için ihtiyaç duydukları ve
 
 
 Void: Bu geri dönüş tipine sahip metodlar işlerini yaptıktan sonra geriye bilgi dönmezler.
+
+
+----------------------------------------- 18.11.2024 ----------------------------------------------------
+
+C# Programlama dili tip güvenliği (Type Safety) sağlayan bir dildir.
+
+
+Uyumsuz tipler arası veri ataması yapılamaz
+String ---> Byte ataması yapılamaz.
+
+
+checked blokları büyük türden küçük türe yapılan dönüşümlerde hata atarak veri kaybı ihtimalini önler
+
+
+Debug: Hata yakalama işlemleri 
+Bug: Hata
+Hata yönetimleri C#'da try-catch ile yapılır
+
+CTRL + F5: Start without debugging
+F5 : Start debugging
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
